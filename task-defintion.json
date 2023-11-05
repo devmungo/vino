@@ -2,7 +2,7 @@
         "containerDefinitions": [
             {
                 "name": "fargate-app",
-                "image": "public.ecr.aws/docker/library/httpd:latest",
+                "image": "nginx:latest",
                 "portMappings": [
                     {
                         "containerPort": 80,
@@ -16,7 +16,7 @@
                     "-c"
                 ],
                 "command": [
-                    "/bin/sh -c \"echo '<html> <head> <title>Lucky Mungomeni</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h3>Fun: Programming & Games</h3></div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
+                    "/bin/sh -c \"echo '<html> <head> <title>Home Page</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h>Lucky Mungomeni<br>Fun: Programming & Games</h></div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
                 ]
             }
         ],
