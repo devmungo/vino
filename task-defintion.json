@@ -26,5 +26,5 @@
     "cpu": "256",
     "memory": "512",
     "networkMode": "awsvpc",
-    "family": "second-cluster-task-definition"
+    "family": "one-cluster-task-definition"
 }
