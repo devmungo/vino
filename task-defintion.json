@@ -1,0 +1,30 @@
+ {
+        "containerDefinitions": [
+            {
+                "name": "fargate-app",
+                "image": "public.ecr.aws/docker/library/httpd:latest",
+                "portMappings": [
+                    {
+                        "containerPort": 80,
+                        "hostPort": 80,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "entryPoint": [
+                    "sh",
+                    "-c"
+                ],
+                "command": [
+                    "/bin/sh -c \"echo '<html> <head> <title>Lucky Mungomeni</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h3>Fun: Programming & Games</h3></div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
+                ]
+            }
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "256",
+        "memory": "512",
+        "networkMode": "awsvpc",
+        "family": "second-cluster-task-definition"
+}
